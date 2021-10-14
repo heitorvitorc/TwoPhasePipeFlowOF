@@ -1,0 +1,13 @@
+### Instructions to setup the simulation and run in parallel (terminal)
+
+# First apply the initial condition of the phase distribution
+setFields
+
+# Decompose domain according to /system/DecomposeParDict file
+DecomposePar
+
+# Run simulation in parallel (OpenFOAM 8) according to number of processors from DecomposeParDict
+mpirun --use-hwthread-cpus -np 16 interFoam -parallel
+
+# After the simulation is done, reconstruct the domain
+reconstructPar
