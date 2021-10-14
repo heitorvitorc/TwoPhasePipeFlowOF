@@ -17,21 +17,21 @@ FoamFile
 
 phases (water air);
 
-water
+water // fluid entering the pipe
 {
     transportModel  Newtonian;
-    nu              1e-06;
+    nu              1.8e-03;
     rho             1000;
 }
 
-air
+air // fluid already inside the pipe
 {
     transportModel  Newtonian;
-    nu              1.48e-06;
-    rho             1200;
+    nu              8.1e-03;
+    rho             1000;
 }
 
-sigma           0.000707106;
+sigma           0.000707106; // very low interfacial tension
 
 
 // ************************************************************************* //
